@@ -4,11 +4,7 @@ pipeline {
         PASS = credentials('registry-pass') 
     }
     stages {
-        stage('Git checkout') {
-            steps {
-                
-            }
-        }
+       
         stage('Build') {
             steps {
                 sh '''
