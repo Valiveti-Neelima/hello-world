@@ -4,6 +4,11 @@ pipeline {
         PASS = credentials('registry-pass') 
     }
     stages {
+        stage('Git checkout') {
+            steps {
+                
+            }
+        }
         stage('Build') {
             steps {
                 sh '''
@@ -27,15 +32,6 @@ pipeline {
                 }
             }
         }
-        stage('Push') {
-            steps {
-                sh './jenkins/push/push.sh'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                sh './jenkins/deploy/deploy.sh'
-            }
-        }
-    }
+        
+   }
 }
